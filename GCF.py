@@ -1,7 +1,7 @@
 from time import sleep
-a = int(input("Enter the first number\n"))
+a = int(input("Enter the first number:\n"))
 sleep(1)
-b = int(input("Enter the second number\n"))
+b = int(input("Enter the second number:\n"))
 sleep(1)
 d = 0 
 af = []
