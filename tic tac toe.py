@@ -3,6 +3,13 @@ board = [' ',' ',' ',' ',' ',' ',' ',' ',' ']
 cnt = -1
 win = False
 winner = ''
+def getempty(n):
+    global board
+    while True:
+            if board[n] == 'X' or board[n] == 'O':
+                n = random.choice(range(0, 8))
+            else:
+                break
 def checkwin():
     global win
     global winner
@@ -23,14 +30,9 @@ def updateboard():
     global board
     shouldcont = True
     newslot = -1 + int(input('What do you want to play?\n'))
-    if board[newslot] == 'X' or board[newslot] == 'O':
+    while board[newslot] == 'X' or board[newslot] == 'O':
         suggestion = random.choice(range(0, 8))
-        while True:
-            if board[suggestion] == 'X' or board[suggestion] == 'O':
-                suggestion = random.choice(range(0, 8))
-
-            else:
-                break
+        getempty(suggestion)
         suggestion += 1
         newslot = -1 + int(input("Oops! You can't play that slot. Maybe try " + str(suggestion) +"\n"))
     board[newslot] = 'X'
@@ -39,12 +41,7 @@ def updateboard():
         shouldcont = False
     if shouldcont:
         cpuslot = random.choice(range(0, 8))
-        while True:
-            if board[cpuslot] == 'X' or board[cpuslot] == 'O':
-                cpuslot = random.choice(range(0, 8))
-
-            else:
-                break
+        getempty(cpuslot)
         board[cpuslot] = 'O'
 print('1|2|3')
 print('-----')
