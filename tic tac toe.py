@@ -22,7 +22,7 @@ def checkwin():
 def updateboard():
     global board
     shouldcont = True
-    newslot = -1 + int(input('What do you want to play?(1-9)\n'))
+    newslot = -1 + int(input('What do you want to play?\n'))
     if board[newslot] == 'X' or board[newslot] == 'O':
         suggestion = random.choice(range(0, 8))
         while True:
@@ -46,6 +46,11 @@ def updateboard():
             else:
                 break
         board[cpuslot] = 'O'
+print('1|2|3')
+print('-----')
+print('4|5|6')
+print('-----')
+print('7|8|9')
 while True:
     updateboard()
     print(board[0]+'|'+board[1]+'|'+board[2])
