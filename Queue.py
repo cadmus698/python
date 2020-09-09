@@ -2,7 +2,7 @@ queuestr = input('What\'s the queue?(Seperate with commas)\n')
 queue = queuestr.split(',')
 queue1 = []
 while True:
-    todo = input('What do you want to do\n')
+    todo = input('What do you want to do? (dequeue/add/print/q)\n')
     if todo == 'dequeue' or todo == 'Dequeue':
         print(queue[0])
         num = 1
